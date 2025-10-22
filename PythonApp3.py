@@ -168,60 +168,106 @@
 
 #import random
 
-#tooted = ["piim", "sai", "leib", "või", "juust", "muna", "õun", "suhkur"]
-#hinnad = [round(random.uniform(0.5, 8.0), 2) for _ in tooted]
+#def küsi_toode(nimi):
+   # """Küsib, kas inimene soovib toodet ja kui jah, siis mitu tükki."""
+   # soov = input(f"Kas soovid osta {nimi}? (jah/ei): ").strip().lower()
+
+    #if not soov.isalpha():
+     #   print("Palun sisesta ainult tähed (jah/ei)!")
+      #  return 0, 0
+
+  #  if soov == "jah":
+    #    hind = round(random.uniform(0.5, 5.0), 2)
+    #    kogus = input(f"Mitu {nimi} soovid osta? (sisesta arv): ").strip()
+
+   #     if not kogus.isdigit():
+    #        print("Palun sisesta ainult arv!")
+       #     return 0, 0
+
+      #  kogus = int(kogus)
+     #   return hind, kogus
+  #  else:
+     #   return 0, 0
+
+
+#def prindi_tsekk(ostud):
+  #  """Kuvab tšeki ja kogusumma."""
+  #  print("\n--- tsekk ---")
+    #kokku = 0
+   # for nimi, (hind, kogus) in ostud.items():
+    #    if kogus > 0:
+        #    summa = hind * kogus
+         #   kokku += summa
+         #   print(f"{nimi:<10} {kogus} tk x {hind:.2f}€ = {summa:.2f}€")
+   # print("----------------")
+   # print(f"Kokku: {kokku:.2f}€")
+  #  print("Aitäh ostu eest!")
+
+#tooted = ["piim", "sai", "leib", "juust", "või", "munad", "õun", "kohv"]
+
 #ostud = {}
-
-#for t, h in zip(tooted, hinnad):
-#    v = input(f"Kas soovid osta {t}? (jah/ei): ")
- #   if v.isalpha() and v.lower() == "jah":
-#        k = input(f"Mitut {t} tahad?: ")
-#        if k.isdigit():
-   #         ostud[t] = int(k)
-  #      else:
-  #          ostud[t] = 0
- #   else:
- #       ostud[t] = 0
-#
-#print("\ntsekk\n" + "-"*30)
-#kokku = 0
-#for t, k in ostud.items():
- #   if k > 0:
-#        hind = hinnad[tooted.index(t)]
- #       s = k * hind
- #       kokku += s
- #       print(f"{t:10} x{k:<3} = {s:.2f} €")
-#print("-"*30)
-#print(f"Kokku: {kokku:.2f} €")
-
+#for toode in tooted:
+ #   hind, kogus = küsi_toode(toode)
+  #  ostud[toode] = (hind, kogus)
 #9 Ruut
 
 #Kasutaja sisestab ruudu küljed ning programm tuvastab kas tegemist saab olla ruuduga.
 #Koosta vastab plokkskeem ja salvesta see samasse kataloogi programmiga.
+#küljed = []
 
+#print("Sisesta 4 külje pikkused (ainult numbrid):")
+#for i in range(1, 5):
+ #   külg = input(f"Sisesta {i}. külg: ").strip()
+  #  if külg.replace('.', '', 1).isdigit():
+   #     külg = float(külg)
+   #     if külg > 0:
+     #       küljed.append(külg)
+    #    else:
+     #       print("Külg peab olema positiivne arv!")
+   # else:
+      #  print("Palun sisesta arv, mitte tähed!")
 
-#a = float(input("Sisesta 1. külg: "))
-#b = float(input("Sisesta 2. külg: "))
-#c = float(input("Sisesta 3. külg: "))
-#d = float(input("Sisesta 4. külg: "))
-#print("See võib olla ruut." if a == b == c == d else "See EI ole ruut.")
+#if len(küljed) == 4 and küljed.count(küljed[0]) == 4:
+   # print("See on ruut — kõik küljed on võrdsed!")
+#else:
+  #  print("See EI OLE ruut — külgede pikkused erinevad.")
 
-#fig, ax = plt.subplots(figsize=(4,6))
-#ax.axis("off")
-#ax.text(0.5, 0.9, "Algus", ha="center")
-#ax.text(0.5, 0.75, "Sisesta 4 külge", ha="center")
-#ax.text(0.5, 0.6, "Kas kõik võrdsed?", ha="center")
-#ax.text(0.5, 0.45, "Jah → Ruut", ha="center")
-#ax.text(0.5, 0.3, "Ei → Ei ole ruut", ha="center")
-#ax.text(0.5, 0.15, "Lõpp", ha="center")
-#plt.savefig("ruudu_plokkskeem.png", dpi=150)
-#plt.close()
+#10 Matemaatika
+#Kasutaja sisestab kaks arvu ning programm küsib kasutajalt, mis tehet ta soovib (+-*/) ning viib kasutaja valiku ellu.
+#Koosta vastab plokkskeem ja salvesta see samasse kataloogi programmiga.
+
+#arv1 = input("Sisesta esimene arv: ").strip()
+#arv2 = input("Sisesta teine arv: ").strip()
+
+#if arv1.replace('.', '', 1).isdigit() and arv2.replace('.', '', 1).isdigit():
+  #  arv1 = float(arv1)
+  #  arv2 = float(arv2)
+#else:
+  #  print("Palun sisesta ainult arvud!")
+
+#tehe = input("Sisesta tehe (+, -, *, /): ").strip()
+
+#if tehe == '+':
+ #   tulemus = arv1 + arv2
+ #   print(f"Tulemus: {arv1} + {arv2} = {tulemus}")
+#elif tehe == '-':
+  #  tulemus = arv1 - arv2
+  #  print(f"Tulemus: {arv1} - {arv2} = {tulemus}")
+#elif tehe == '*':
+  #  tulemus = arv1 * arv2
+ #   print(f"Tulemus: {arv1} * {arv2} = {tulemus}")
+#elif tehe == '/':
+ #   if arv2 == 0:
+  #      print("Nulliga sa ei saa jagada !")
+  #  else:
+  #      tulemus = arv1 / arv2
+ #       print(f"Tulemus: {arv1} / {arv2} = {tulemus}")
+#else:
+  #  print("Kasuta ainult + - * /")
 
 #11 Juubel
 #Kasutaja sisestab oma sünnipäeva ja sinu programm ütleb, kas tegemist on juubeliga.
 #Plokkskeemi pole vaja!
-
-#from datetime import date
 
 #synniaasta = int(input("Sisesta oma sünniaasta: "))
 #vanus = date.today().year - synniaasta
@@ -234,10 +280,21 @@
 #Kasutaja sisestab toote hinna. Kui see on hinnaga kuni 10€, saab ta allahindlust 10%. Üle 10€ tooted saavad soodukat 20%.
 #Kuva toote lõplik hind. Plokkskeemi pole vaja!
 
-#hind = float(input("Sisesta toote hind (€): "))
-#soodus = 0.1 if hind <= 10 else 0.2
-#lõpphind = hind * (1 - soodus)
-#print(f"Lõplik hind on {lõpphind:.2f} €")
+#hind = input("Sisesta toote hind (€): ").strip()
+
+#if hind.replace('.', '', 1).isdigit():
+  #  hind = float(hind)
+ #   if hind > 0:
+ #       if hind <= 10:
+    #        soodustus = hind * 0.10
+   #     else:
+     #       soodustus = hind * 0.20
+     #   lopphind = hind - soodustus
+ #       print(f"Toote lõplik hind on {lopphind:.2f} €")
+    #else:
+  #      print("Hind peab olema positiivne arv!")
+#else:
+  #  print("Palun sisesta hind numbrina!")
 
 #13 Jalgpalli meeskond
 #Sa pead looma programmi, mis kontrollib kas kandideerija sobib antud meeskonda.
@@ -246,21 +303,37 @@
 
 #sugu = input("Sisesta sugu (mees/naine): ").strip().lower()
 #if sugu == "naine":
-   # print("Vabandust, meeskonda lubatakse ainult meessugu.")
+   # print("Vabandust, ainult mees lubatud.")
 #elif sugu == "mees":
   #  vanus = int(input("Sisesta vanus: "))
   #  if 16 <= vanus <= 18:
  #       print("Sobid meeskonda!")
  #   else:
- #       print("Ei sobi vanuse tõttu.")
+ #       print("Ei sobi vanus.")
 #else:
-  #  print("Tundmatu sisend.")
+  #  print("Kõik on korrass!.")
 
+#14 Busside logistika
+#Olgu meil vaja transportida teatud arv inimesi bussidega, milles on teatud arv kohti. Mitu bussi on vaja selleks, et kõik inimesed kohale saaksid, ja mitu inimest on viimases bussis (eeldusel, et eelmised on kõik täiesti täis)? Kirjuta programm, mis küsib inimeste arvu ja busside suuruse ning lahendab seejärel selle ülesande.
 
-#inimesed=int(input("Sisesta inimeste arv: "))
-#kohad=int(input("Sisesta kohtade arv bussis: "))
+#inimesed = input("Sisesta inimeste arv: ").strip()
+#kohad = input("Sisesta ühe bussi kohtade arv: ").strip()
 
-#bussid=(inimesed + kohad - 1) // kohad
-#viimases=inimesed % kohad or kohad
-#print(f"Vaja on {bussid} bussi.")
-#print(f"Viimases bussis on {viimases} inimest.")
+#if inimesed.isdigit() and kohad.isdigit():
+ #   inimesed = int(inimesed)
+ #   kohad = int(kohad)
+ #   if inimesed > 0 and kohad > 0:
+   #     bussid = inimesed // kohad
+   #     viimases = inimesed % kohad
+    #    if viimases > 0:
+    #        bussid += 1
+     #   else:
+     #       viimases = kohad
+     #   print(f"Inimesi kokku: {inimesed}")
+   #    print(f"Bussikohti igas bussis: {kohad}")
+    #    print(f"Vaja busse: {bussid}")
+    #    print(f"Viimases bussis on {viimases} inimest.")
+   # else:
+    #    print("peab olema vähemalt 1 inimene ja koht!!")
+#else:
+  #  print("Palun sisesta ainult täisarvud!")
