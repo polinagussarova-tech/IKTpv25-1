@@ -166,3 +166,101 @@
 
 #Küsi inimeselt poes eraldi kas ta soovib osta piima, saia, leiba jne. Loo juhuslikud hinnad ja küsi mitu tükki tahad osta, kui tahad. Teata, mis summa maksma läheb(Kuva ekraanil tšekk).
 
+#import random
+
+#tooted = ["piim", "sai", "leib", "või", "juust", "muna", "õun", "suhkur"]
+#hinnad = [round(random.uniform(0.5, 8.0), 2) for _ in tooted]
+#ostud = {}
+
+#for t, h in zip(tooted, hinnad):
+#    v = input(f"Kas soovid osta {t}? (jah/ei): ")
+ #   if v.isalpha() and v.lower() == "jah":
+#        k = input(f"Mitut {t} tahad?: ")
+#        if k.isdigit():
+   #         ostud[t] = int(k)
+  #      else:
+  #          ostud[t] = 0
+ #   else:
+ #       ostud[t] = 0
+#
+#print("\ntsekk\n" + "-"*30)
+#kokku = 0
+#for t, k in ostud.items():
+ #   if k > 0:
+#        hind = hinnad[tooted.index(t)]
+ #       s = k * hind
+ #       kokku += s
+ #       print(f"{t:10} x{k:<3} = {s:.2f} €")
+#print("-"*30)
+#print(f"Kokku: {kokku:.2f} €")
+
+#9 Ruut
+
+#Kasutaja sisestab ruudu küljed ning programm tuvastab kas tegemist saab olla ruuduga.
+#Koosta vastab plokkskeem ja salvesta see samasse kataloogi programmiga.
+
+
+#a = float(input("Sisesta 1. külg: "))
+#b = float(input("Sisesta 2. külg: "))
+#c = float(input("Sisesta 3. külg: "))
+#d = float(input("Sisesta 4. külg: "))
+#print("See võib olla ruut." if a == b == c == d else "See EI ole ruut.")
+
+#fig, ax = plt.subplots(figsize=(4,6))
+#ax.axis("off")
+#ax.text(0.5, 0.9, "Algus", ha="center")
+#ax.text(0.5, 0.75, "Sisesta 4 külge", ha="center")
+#ax.text(0.5, 0.6, "Kas kõik võrdsed?", ha="center")
+#ax.text(0.5, 0.45, "Jah → Ruut", ha="center")
+#ax.text(0.5, 0.3, "Ei → Ei ole ruut", ha="center")
+#ax.text(0.5, 0.15, "Lõpp", ha="center")
+#plt.savefig("ruudu_plokkskeem.png", dpi=150)
+#plt.close()
+
+#11 Juubel
+#Kasutaja sisestab oma sünnipäeva ja sinu programm ütleb, kas tegemist on juubeliga.
+#Plokkskeemi pole vaja!
+
+#from datetime import date
+
+#synniaasta = int(input("Sisesta oma sünniaasta: "))
+#vanus = date.today().year - synniaasta
+#if vanus % 5 == 0:
+  #  print(f"Sul on juubel! Oled {vanus} aastat vana.")
+#else:
+    #print(f"Sul ei ole juubelit. Oled {vanus} aastat vana.")
+
+#12 Müük
+#Kasutaja sisestab toote hinna. Kui see on hinnaga kuni 10€, saab ta allahindlust 10%. Üle 10€ tooted saavad soodukat 20%.
+#Kuva toote lõplik hind. Plokkskeemi pole vaja!
+
+#hind = float(input("Sisesta toote hind (€): "))
+#soodus = 0.1 if hind <= 10 else 0.2
+#lõpphind = hind * (1 - soodus)
+#print(f"Lõplik hind on {lõpphind:.2f} €")
+
+#13 Jalgpalli meeskond
+#Sa pead looma programmi, mis kontrollib kas kandideerija sobib antud meeskonda.
+#Vanus peab jääma vahemikku 16-18 ning lubatud on ainult meessugu.
+#Täienda programmi nii, et kui kandideerija on naissoost, siis vanust üldse ei küsita
+
+#sugu = input("Sisesta sugu (mees/naine): ").strip().lower()
+#if sugu == "naine":
+   # print("Vabandust, meeskonda lubatakse ainult meessugu.")
+#elif sugu == "mees":
+  #  vanus = int(input("Sisesta vanus: "))
+  #  if 16 <= vanus <= 18:
+ #       print("Sobid meeskonda!")
+ #   else:
+ #       print("Ei sobi vanuse tõttu.")
+#else:
+  #  print("Tundmatu sisend.")
+
+
+#inimesed=int(input("Sisesta inimeste arv: "))
+#kohad=int(input("Sisesta kohtade arv bussis: "))
+
+#bussid=(inimesed + kohad - 1) // kohad
+#viimases=inimesed % kohad or kohad
+#print(f"Vaja on {bussid} bussi.")
+#print(f"Viimases bussis on {viimases} inimest.")
