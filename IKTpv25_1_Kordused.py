@@ -1,5 +1,4 @@
-#Kuvab ekraanile tervituse:
-#"Tere! Olen sinu uus sõber - Python!"
+#2.3 töö moodlist
 print("Tere! Olen sinu uus sober - Python")
 
 nimi=input("Palun sisesta oma nimi: ").strip()
