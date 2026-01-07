@@ -4,7 +4,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>0e41b18f-1396-4cdf-bb7c-d338685dc279</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>Programmid_tsükklid.py</StartupFile>
+    <StartupFile>Email_saamine.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,6 +22,9 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="IKTpv25_1_Kordused.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Email_saamine.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Programmid_tsükklid.py">
