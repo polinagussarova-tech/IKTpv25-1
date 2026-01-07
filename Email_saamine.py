@@ -25,8 +25,8 @@ def saada_email(saaja_email):
 <body>
     <h1>Sending an HTML email from Python</h1>
     <p>Hello there,</p>
-    <a href="https://inspirezone.tech/">
-        Here's a link to an awesome dev community!
+    <a href="https://github.com/polinagussarova-tech/IKTpv25-1">
+        Here's a link to my GitHub!
     </a>
 </body>
 </html>
