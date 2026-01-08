@@ -15,24 +15,9 @@ def saada_email(saaja_email):
     msg["From"] = saatja_email
     msg["To"] = saaja_email
 
-    html_content = """\
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <title>HTML email</title>
-</head>
-<body>
-    <h1>Sending an HTML email from Python</h1>
-    <p>Hello there,</p>
-    <a href="https://github.com/polinagussarova-tech/IKTpv25-1">
-        Here's a link to my GitHub!
-    </a>
-</body>
-</html>
-"""
-
-    msg.set_content(html_content, subtype="html")
+    with open(r"C:\Users\opilane\source\repos\penguiiin.jpg", "rb") as f:
+        image_data=f.read()
+    msg.add_attachment(image_data, maintype="image", subtype="jpg")
 
     try:
         with smtplib.SMTP(smtp_server, port) as server:
@@ -45,3 +30,4 @@ def saada_email(saaja_email):
 
 kellele = input("Sisesta saaja e-posti aadress: ")
 saada_email(kellele)
+
