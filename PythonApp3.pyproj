@@ -33,13 +33,40 @@
     <Compile Include="7_teema_töö_tekstifailidega.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="kodutoo.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="kordused.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="list_loend.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="main.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="mymodule.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="süsteem_põhifail.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="töö4.1.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="modulifail.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="paber, kärid ja kivi.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Programmid_tsükklid.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="PythonApp3.py" />
+    <Compile Include="tavaline.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
