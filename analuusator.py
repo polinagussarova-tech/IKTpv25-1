@@ -2,14 +2,11 @@ import glob
 import os
 from datetime import datetime
 
-f=open('Kasutajad.txt', 'r')
-print(dir(f))
-f.close()
 
 #1 funktsioon leia_projektifailid(laiend):
 def leia_projektifailid(laiend):
     if not laiend.startswith("."):
-        laiend="."+laiend
+        laiend = "." + laiend
     return glob.glob(f"*{laiend}")
 
 #2 funktsioon analuusi_faili_sisu(failitee): Loeb faili ridade kaupa.
@@ -48,6 +45,6 @@ def otsi_faili(faili_nimi, otsingu_tee="."):
     return "faili ei leitud"
 
 #Näide kasutamisest
-otsitav_fail=input("Sisesta itsitava faili nimi (nt minu_fail.txt): ")
-tulemus=otsi_faili(otsitav_fail)
-print(tulemus)
+# otsitav_fail=input("Sisesta otsitava faili nimi (nt minu_fail.txt): ")
+# tulemus=otsi_faili(otsitav_fail)
+# print(tulemus)
