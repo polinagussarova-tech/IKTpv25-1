@@ -1,4 +1,4 @@
-
+#LIST
 #1️ Sõna või lause analüüs
 #Sisesta sõna või lause.
 #Loenda:
