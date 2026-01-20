@@ -1,0 +1,42 @@
+#Lineaarsed programmid
+
+Aritmeetilised põhioperatsioonid
+
+Operatsioon	Sümbol	Näide	Tulemus
+Astendamine	**	2 ** 3	     8
+Korrutamine	*	4 * 5        	20
+Jagamine	/	7 / 2       	3.5
+Jagamise täisarvuline osa	//	7 // 2	    3
+Jagamisjääk	%	7 % 2	     1
+Liitmine	+	10 + 3	     13
+Lahutamine	-	9 - 4	      5
+
+Tehted tekstidega
+
+Tehe	Kirjeldus	Näide	Tulemus
++	tekstide liitmine	"Tere " + "maailm"	"Tere maailm"
+*	teksti kordamine	"ha" * 3	"hahaha"
+
+Võrdlusoperatsioonid
+
+Operatsioon	Sümbol	Näide	Tulemus
+Võrdne	==	  5 == 5	  True
+Ei võrdu	!=	 4 != 2	   True
+Väiksem	<	  3 < 5	    True
+Suurem	>	  7 > 2	      True
+Väiksem või võrdne	<=	 5 <= 5	     True
+Suurem või võrdne	>=	 6 >= 8	      False
+
+Loogilised operatsioonid
+
+Operatsioon	    Kirjeldus	      Näide	       Tulemus
+not	   eitab (muudab vastupidiseks)	   not True	     False
+and	   tõene, kui mõlemad on tõesed	    True and False	     False
+or	   tõene, kui vähemalt üks on tõene	     False or True	     True
+
+
+Funktsioon	Kirjeldus	Näide	        Tulemus
+type(x)	    näitab muutuja tüüpi	     type(5)	<class 'int'>
+int(x)	    teisendab täisarvuks	     int(3.7) → 3	
+float(x)	     teisendab ujukomaarvuks	    float("4.5") → 4.5	
+str(x)	     teisendab tekstiks	    str(123) → "123"
