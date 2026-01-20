@@ -1,7 +1,7 @@
-#töö 3.1
+#tÃ¶Ã¶ 3.1 Kordused
 
 #1 Sisestatakse 15 arvu.
-#Määrata, mitu neist on täisarvud.
+#MÃ¤Ã¤rata, mitu neist on tÃ¤isarvud.
 
 #k=0 #looendur
 #for i in range(15):
@@ -11,7 +11,7 @@
    #     k+=1
 #print(f"Taisarve oli kokku {k} tk")
 
-#2 Küsi kasutajalt arv A ja leia kõigi naturaalarvude summa vahemikus 1 kuni A.
+#2 KÃ¼si kasutajalt arv A ja leia kÃµigi naturaalarvude summa vahemikus 1 kuni A.
 #s=0 #summa
 #while True:
   #  try:
@@ -39,13 +39,13 @@
 #else:
  #   print("Korrutist ei saa, sest et ei olnud positiivsete arvude.")
 
-#4  Koosta programm, mis väljastab ekraanile arvude ruudud vahemikus 10 kuni 20.
+#4  Koosta programm, mis vÃ¤ljastab ekraanile arvude ruudud vahemikus 10 kuni 20.
 
 #for i in range(10,21):
     #print(f"Arv {i} ruut on {i**2}")
 
 #5 Koosta programm, mis arvutab ainult negatiivsete arvude summa N sisestatud arvu seast.
-#N väärtus sisestatakse klaviatuurilt.
+#N vÃ¤Ã¤rtus sisestatakse klaviatuurilt.
 
 #N = int(input("Kui palju arvu sa tahad sisestada? "))
 #summa = 0
@@ -56,11 +56,11 @@
 #print(f"Negatiivsete arvude summa on: {summa}")
 
 #6 Klaviatuurilt sisestatakse N arvu.
-#Koosta programm, mis määrab sisestatud arvude seast:
+#Koosta programm, mis mÃ¤Ã¤rab sisestatud arvude seast:
 #negatiivsete arvude arvu,
 #positiivsete arvude arvu,
 #nullide arvu.
-#(N väärtus sisestatakse klaviatuurilt.)
+#(N vÃ¤Ã¤rtus sisestatakse klaviatuurilt.)
 
 #negatiivsed=0
 #positiivsed=0
@@ -79,7 +79,7 @@
 #print(f"Positiivseid arve {positiivsed}: ")
 #print(f"Nulle {nullid}: ")
 
-#7 Väljastada ekraanile arvud, mis on K-ga jaguvad vahemikust [A, B].
+#7 VÃ¤ljastada ekraanile arvud, mis on K-ga jaguvad vahemikust [A, B].
 
 #A = int(input("Sisesta algus (A): "))
 #B = int(input("Sisesta lopp (B): "))
