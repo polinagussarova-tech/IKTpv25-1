@@ -4,8 +4,8 @@ from Moodulifail import *
 #5
 summa=float(input("Sisesta hoiuse summa: "))
 aastad=int(input("Sisesta aastate arv: "))
-lõpp_summa=bank(summa, aastad)
-print(f"Lõppsumma {aastad} aasta pärast on {lõpp_summa:.2f} eurot")
+lÃµpp_summa=bank(summa, aastad)
+print(f"LÃµppsumma {aastad} aasta pÃ¤rast on {lÃµpp_summa:.2f} eurot")
 
 #4
 kuu=season(input("Sisesta kuu number (1-12): "))
@@ -13,11 +13,11 @@ print(f"Aastaaja on: {kuu}")
 
 
 #3
-print("Arvutame ruudu pindala ja ümbermõõtu!")
-külg=float_kontroll(input("Sisesta ruudu külje pikkus: "))
-ümbermõõt,pindala,diagonaal=square(külg)
-print(f"Ruudu külg: {külg}")
-print(f"Ruudu ümbermõõt: {ümbermõõt}")
+print("Arvutame ruudu pindala ja Ã¼mbermÃµÃµtu!")
+kÃ¼lg=float_kontroll(input("Sisesta ruudu kÃ¼lje pikkus: "))
+Ã¼mbermÃµÃµt,pindala,diagonaal=square(kÃ¼lg)
+print(f"Ruudu kÃ¼lg: {kÃ¼lg}")
+print(f"Ruudu Ã¼mbermÃµÃµt: {Ã¼mbermÃµÃµt}")
 print(f"Ruudu pindala: {pindala}")
 print(f"Ruudu diagonaal: {diagonaal}")
 
@@ -46,7 +46,7 @@ for i in range(5):
 
 
 #6
-n = int(input("Sisesta arv (0–1000): "))
+n = int(input("Sisesta arv (0â€“1000): "))
 
 if is_prime(n):
     print(f"{n} on algarv!")
@@ -54,27 +54,27 @@ else:
     print(f"{n} ei ole algarv.")
 
 #7
-paev = int(input("Sisesta päev: "))
+paev = int(input("Sisesta pÃ¤ev: "))
 kuu = int(input("Sisesta kuu: "))
 aasta = int(input("Sisesta aasta: "))
 
 if date(paev, kuu, aasta):
-    print("Kuupäev on õige!")
+    print("KuupÃ¤ev on Ãµige!")
 else:
-    print("Kuupäev ei ole õige!")
+    print("KuupÃ¤ev ei ole Ãµige!")
 
 #8
 text = input("Sisesta tekst: ")
-key = int(input("Sisesta võti (arv): "))
+key = int(input("Sisesta vÃµti (arv): "))
 
 encrypted = XOR_cipher(text, key)
-print(f"Krüpteeritud tekst {encrypted}")
+print(f"KrÃ¼pteeritud tekst {encrypted}")
 
 decrypted = XOR_uncipher(encrypted, key)
-print(f"Dekrüpteeritud tekst {decrypted}")
+print(f"DekrÃ¼pteeritud tekst {decrypted}")
 
 #9
-text = input("Sisesta arvud komadega (näiteks 1,2,3,4): ")
+text = input("Sisesta arvud komadega (nÃ¤iteks 1,2,3,4): ")
 
 if text.strip() == "":
     numbers = []
@@ -84,13 +84,13 @@ else:
 result = average(numbers)
 
 if result is None:
-    print("Järjend on tühi, keskmist ei ole.")
+    print("JÃ¤rjend on tÃ¼hi, keskmist ei ole.")
 else:
     print(f"Aritmeetiline keskmine on {result}")
 
 #10
 
-text = input("Sisesta arvud komadega (näiteks 1,2,3,4): ")
+text = input("Sisesta arvud komadega (nÃ¤iteks 1,2,3,4): ")
 
 if text.strip() == "":
     numbers = []
@@ -100,14 +100,14 @@ else:
 result = min_max(numbers)
 
 if result is None:
-    print("Järjend on tühi, tulemusi ei ole.")
+    print("JÃ¤rjend on tÃ¼hi, tulemusi ei ole.")
 else:
-    print("Väikseim arv:", result[0])
+    print("VÃ¤ikseim arv:", result[0])
     print("Suurim arv:", result[1])
 
 #11
 
-text = input("Sisesta elemendid komadega (näiteks: a,b,a,c,b): ")
+text = input("Sisesta elemendid komadega (nÃ¤iteks: a,b,a,c,b): ")
 
 if text.strip() == "":
     lst = []
@@ -117,4 +117,84 @@ else:
 result = unique_elements(lst)
 
 print(f"Ainulaadsed elemendid {result}")
+
+
+
+#TÃ–Ã– 7.3
+
+
+from kusimutlik__module import *
+import random
+
+N=3
+M=2
+
+koik=[]
+oiged=[]
+valed=[]
+
+juba_testitud=["Mari", "Paul", "Johan"]
+
+kus_vas={}
+
+while True:
+    valik=input("Vali 1- Alusta kÃ¼simustlikku, 2- lisa uus kÃ¼simus, 3- vÃ¤lju: ")
+    
+    #2 KÃ¼simustiku lÃ¤biviimine ja Vastajate hulk
+    if valik=="1":
+        kus_vas=andmete_lugemine_failidest(kus_vas)
+        for i in range(M):
+            while True:
+                nimi=input("Sisesta oma nimi: ")
+                
+                if nimi in juba_testitud:
+                    print("See kasutaja on juba testitud! Sisesta teist nime.")
+                else:
+                    print(f"Tere, {nimi}! Alustame test.")
+                    juba_testitud.append(nimi)
+                    break
+    #3 testimine
+            punktid, sobis=testimine(kus_vas, N, nimi)
+            email=nimi.replace(" ", ".")+"@example.com"
+                    
+            vastaja={"nimi":nimi, "punktid":punktid, "email":email, "sobis":sobis}
+            koik.append(vastaja)
+            
+            if sobis:
+                oiged.append(vastaja)
+            else:
+                valed.append(vastaja)
+            
+    #4 Failide salvestamine
+            andmete_salvestamine_failidesse(koik, oiged, valed)
+            print("Failid Ãµiged.txt, valed.txt ja kÃµik.txt on salvestatud.")
+        
+    #5 E-kirjade saatmine
+            emaili_saatmine(nimi, punktid, sobis)
+            print("Emaili tulemused on saadetud.")
+            
+            raport_tooandjale(koik)
+            
+        
+    #6 VÃµimalus lisada kÃ¼simusi programmi kaudu
+    elif valik=="2":
+            kusimus=input("Sisesta uus kÃ¼simus: ")
+            vastus=input("Sisesta Ãµige vastus: ")
+        
+            kÃ¼simuste_lisamine(kusimus, vastus)
+            print("Uus kÃ¼simus on lisatud faili.")
+            
+    #7 EkraanivÃ¤ljund tÃ¶Ã¶ lÃµpus
+            print("Edukalt vastanud:")
+            for vastaja in oiged:
+                print(vastaja["nimi"], "-", vastaja["punktid"], "Ãµigesti")
+        
+            print("Tulemused saadetud e-posti aadressidele.")
+            
+    #8 vÃ¤lju kui valik on 3
+    elif valik=="3":
+            print("Head aega!")
+            break
+    else:
+        print("Sisesta ainult 1, 2 vÃµi 3!")
 
