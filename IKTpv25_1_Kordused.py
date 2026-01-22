@@ -1,4 +1,4 @@
-#2.3 t�� moodlist
+#2.3 töö moodlist
 print("Tere! Olen sinu uus sober - Python")
 
 nimi=input("Palun sisesta oma nimi: ").strip()
@@ -59,3 +59,59 @@ except:
     print("Vale soov!")
 
 print(f"Kohtumiseni, {nimi}! Igavesti sinu, Python!")
+
+
+
+from math import * # import oli valesti tehtud
+import math # import oli valesti tehtud
+print("Ruudu karakteristikud")
+a=float(input('Sisesta ruudu külje pikkus => ')) # int käsk ei olnud
+S=a**2
+print("Ruudu pindala", round(S, 1))
+P=4*a
+print("Ruudu ümbermõõt", round(P, 1))
+di=a*math.sqrt(2) # on vaja lisada sqrt ei sqr
+print("Ruudu diagonaal", round(di,2))
+print()
+print("Ristküliku karakteristikud") # ei ole vaja teine sulg
+b=float(input("Sisesta ristküliku 1. külje pikkus => ")) # on vaja panna float või int
+c=float(input("Sisesta ristküliku 2. külje pikkus => ")) # on vaja panna float
+S=b*c
+print("Ristküliku pindala", round(S, 1)) # kaks ülemist koma ei ole kirjutatud
+P=2*(b+c) # on vaja korrutada panna
+print("Ristküliku ümbermõõt", round(P, 1))
+di=math.sqrt(b**2+c**2) #ei pea korrutama
+print("Ristküliku diagonaal", round(di, 2)) # pärast di peab panema koma ja kaks ja teine sulg
+print()
+print("Ringi karakteristikud")
+r=int(input("Sisesta ringi raadiusi pikkus => "))
+d=2*r #on vaja panna korrutada
+print("Ringi läbimõõt", round(d, 1))  # koma on puudu ja round puudu
+S=pi*r**2 # sulg ei ole vaja kirjutada ja korrutada
+print("Ringi pindala", round(S, 1)) # S koma 1
+C=2*pi*r # kutsuta sulgud ja korrutada
+print("Ringjoone pikkus", round(C, 2)) # kaks sulgud ja kaks pärast C ja koma
+
+
+
+
+
+
+
+
+  päev=input("Sisesta päeva nimetus: (näiteks esmaspäev): ")
+#1. Kui on neljapäev, siis "Huraaa, Programmeerimine!
+if päev.lower()=="neljapäev":
+    print("Huraaa, Programmeerimine!")
+
+#2. Kui on neljapäev, siis "Huraaa, Programmeerimine!, kui on reede, siis "Igatsen programmeerida tahaks!"
+if päev.lower()=="neljapäev":
+    print("Huraaa, Programmeerimine!")
+else:
+    print("Igatsen, programmerida tahaks!")
+#3. Tööpäevad ja nädalavahetus
+if päev.lower()=="laupäev" or päev.lower()=="pühapäev":
+    print("lõpuks ometi nädalavahetus!")
+else:
+    print("tööpäev, pean tööl käima!")
+
