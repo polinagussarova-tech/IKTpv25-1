@@ -234,3 +234,34 @@ if K==0:
     print("Viimasele pannile ei jää midagi.")
 else:
     print(f"Viimasele pannile jääb {K} kotletti")
+
+
+
+
+from functions import *
+
+    while True:
+        print("\nMenГјГј")
+        print("Sisesta number")
+        print("1. Teksti sisestus ja .txt-faili genereerimine")
+        print("2. Kalkulaator")
+        print("3. Ruut")
+        print("0. VГ¤lju")
+
+        try:
+            choice = int(input("Valik: "))
+        except ValueError:
+            print("Vale valik!")
+            continue
+
+        if choice == 1:
+            txt_fail()
+        elif choice == 2:
+            kalkulaator()
+        elif choice == 3:
+            ruut()
+        elif choice == 0:
+            print("Programmi lГµpetamine...")
+            break
+        else:
+            print("Vale valik!")
