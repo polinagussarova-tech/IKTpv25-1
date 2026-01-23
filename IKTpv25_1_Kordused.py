@@ -238,7 +238,7 @@ else:
 
 
 
-from functions import *
+ from functions import *
 
     while True:
         print("\nMenГјГј")
@@ -265,3 +265,131 @@ from functions import *
             break
         else:
             print("Vale valik!")
+
+
+
+
+
+import math
+
+# txt_fail(): kГјsib kasutajalt teksti ja salvestab faili
+def txt_fail():
+    while True:
+        tekst = input("Sisesta tekst: ")
+        if tekst.strip() == "":
+            print("Tekst ei saa olla tГјhi!")
+        else:
+            break
+
+    file_path = "Fail.txt"
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(tekst)
+
+    print("Fail loodud:", file_path)
+
+
+# kalkulaator(): nГ¤itab menГјГјd ja laseb valida tehte
+def kalkulaator():
+    print("\nVali tehe")
+    print("1. Liitmine")
+    print("2. Lahutamine")
+    print("3. Korrutamine")
+    print("4. Jagamine")
+    print("5. RuutvГµrrand")
+
+    valik = input("Valik: ")
+    if valik == "1":
+        liitmine()
+    elif valik == "2":
+        lahutamine()
+    elif valik == "3":
+        korrutamine()
+    elif valik == "4":
+        jagamine()
+    elif valik == "5":
+        ruutvorrand()
+    else:
+        print("Vale valik!")
+
+
+# liitmine(): liidab kaks arvu ja nГ¤itab tulemust
+def liitmine():
+    a = get_number("Arv 1: ")
+    b = get_number("Arv 2: ")
+    print("Tulemus:", a + b)
+
+
+# lahutamine(): lahutab kaks arvu ja nГ¤itab tulemust
+def lahutamine():
+    a = get_number("Arv 1: ")
+    b = get_number("Arv 2: ")
+    print("Tulemus:", a - b)
+
+
+# korrutamine(): korrutab kaks arvu ja nГ¤itab tulemust
+def korrutamine():
+    a = get_number("Arv 1: ")
+    b = get_number("Arv 2: ")
+    print("Tulemus:", a * b)
+
+
+# jagamine(): jagab kaks arvu, kui jagaja ei ole 0
+def jagamine():
+    a = get_number("Arv 1: ")
+    while True:
+        b = get_number("Arv 2: ")
+        if b == 0:
+            print("Nulliga jagada ei saa!")
+        else:
+            break
+    print("Tulemus:", a / b)
+
+
+# ruutvorrand(): lahendab ruutvГµrrandi a*x^2 + b*x + c = 0
+def ruutvorrand():
+    while True:
+        a = get_number("Sisesta a: ")
+        if a == 0:
+            print("a ei saa olla 0!")
+        else:
+            break
+    b = get_number("Sisesta b: ")
+    c = get_number("Sisesta c: ")
+
+    D = b ** 2 - 4 * a * c
+
+    if D > 0:
+        x1 = (-b + math.sqrt(D)) / (2 * a)
+        x2 = (-b - math.sqrt(D)) / (2 * a)
+        print(f"Lahendid: x1 = {x1}, x2 = {x2}")
+    elif D == 0:
+        x = -b / (2 * a)
+        print(f"Гњks lahend: x = {x}")
+    else:
+        print("Lahendeid pole")
+
+
+# ruut(): joonistab ruudu tГ¤he '*' jГ¤rgi, kasutaja sisestatud suuruse jГ¤rgi
+def ruut():
+    while True:
+        suurus = get_number("Sisesta ruudu suurus: ", integer=True)
+        if suurus <= 0:
+            print("Suurus peab olema positiivne!")
+        else:
+            break
+
+    for _ in range(suurus):
+        print("* " * suurus)
+
+
+# Abifunktsioon: kГјsib numbri ja kontrollib, et see oleks korrektne
+def get_number(prompt, integer=False):
+    while True:
+        s = input(prompt)
+        try:
+            if integer:
+                return int(s)
+            else:
+                return float(s)
+        except ValueError:
+            print("Palun sisesta korrektne number!")
